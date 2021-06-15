@@ -2,16 +2,44 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Transparent overlay!</title>
     <style>
-      img {
-        width: 300px;
-        height: 74px;
+      body {
+        text-align: center;
+        height: 100vh;
+        font-family: Helvetica, Geneva, Tahoma, sans-serif;
+        color: white;
+        opacity:0.5;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h1 {
+        font-size: 128px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 108px;
+        text-transform: uppercase;
       }
     </style>
   </head>
-  <body style="color:grey;opacity:0.5;">
-    <h1>Dit is h1</h1>
-    <img src='https://agronomics.im/wp-content/uploads/2019/09/cropped-AGRONOMICS-LOGO-300x0-c-default.png' alt='' />
+  <body>
+    <div>
+      <h1>Confidential <p>Disclosed on <span id='p1'></span></p></h1>      
+    </div>
   </body>
+  <script>
+    var today = new Date();
+
+    var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+
+    document.getElementById('p1').innerHTML = date
+  </script>
 </html>

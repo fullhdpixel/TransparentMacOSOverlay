@@ -2,7 +2,6 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
 const MAIN_HTML = path.join('file://', __dirname, 'main.html');
-const CHILD_PADDING = 50;
 
 const onAppReady = function () {
   let parent = new BrowserWindow({
