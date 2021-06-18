@@ -32,7 +32,10 @@
   </head>
   <body>
     <div>
-      <h1>Confidential <span id='p2'></span> <p>Disclosed on <span id='p1'></span></p></h1>      
+      <h1>Confidential
+        <p><span id='p2'></span></p>
+        <p>Disclosed on <span id='p1'></span></p>
+      </h1>      
     </div>
   </body>
   <script>
@@ -41,10 +44,5 @@
     var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
 
     document.getElementById('p1').innerHTML = date
-
-    ipcRenderer.on('foo', (event, data) => {
-      alert(data); // prints 'do something for me'
-      document.getElementById('p2').innerHTML = r
-    })
   </script>
 </html>

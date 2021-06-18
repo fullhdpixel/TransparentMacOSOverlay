@@ -36,29 +36,23 @@ const template = [
       {
         role: 'help',
         label: 'Change input',
-        click: async() => {
+        click (menuItem, browserWindow, event) {
           prompt({
             title: 'Prompt example',
             label: 'Optional text:',
-            value: '',
-            inputAttrs: {
-              type: 'text'
-            },
             type: 'input'
           }).then((r) => {
-
+            console.log(r)
             if (r === null) {
               console.log('user cancelled')
-            } else {
-              console.log('result', r)
-              // ipcRenderer.send('foo',r)
-              // parent.webContents.send('foo', r);
-              console.log(parent)
+            } else if (parent && parent.webContents) {
               parent.webContents.executeJavaScript(`
-                document.getElementById('p2').innerHTML = ${r}
+                document.getElementById('p2').innerText = "${r.toString().trim()}"
               `, true).then((result) => {
                 console.log(result) // will be your innherhtml
               })
+            } else {
+              alert('Parent window not yet ready')
             }
           }).catch(console.error)
         }
