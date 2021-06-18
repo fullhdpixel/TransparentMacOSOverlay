@@ -8,16 +8,12 @@
     "startWithTransparentOption": "electron --enable-transparent-visuals .",
     "startWithAllOptions": "electron --enable-transparent-visuals --disable-gpu ."
   },
-  "keywords": [
-    "Electron",
-    "transparent",
-    "tutorial",
-    "transparency"
-  ],
   "author": "Doom",
   "license": "GPLv3",
   "devDependencies": {
-    "electron": "^4.0.5",
-    "electron-reloader": "^1.2.1"
+    "electron": "13.1.2"
+  },
+  "dependencies": {
+    "electron-prompt": "^1.6.2"
   }
 }
